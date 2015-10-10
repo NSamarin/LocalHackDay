@@ -1,5 +1,11 @@
 //TODO: remove after API is done
-var countCourses = 0;
+var countCourses = 0,
+countMonday = 0,
+countTuesday = 0,
+countWednseday = 0,
+countThursday = 0,
+countFriday = 0;
+
 var sample = {
 "name": "Java Programming",
 "semester": 1,
@@ -68,9 +74,21 @@ $(document).ready(function() {
     displayCourseInfo(sample, pageElement);
 
     $( "#add_course_btn" ).click(function(e) {
+      e.preventDefault();
       countCourses++;
       if (countCourses > 5) return;
-      $("#course_info").append('<br><br><form class="form-inline" role="form"><div class="form-group"> <label>Course Name:</label><br><input class="form-control" id="email"></div><br><br><div class="form-group"><label>Start Date:</label><br><input class="form-control" id="pwd"></div><br><br><div class="form-group"><label>End Date:</label><br><input class="form-control" id="email"></div>');
+      $("#course_info").append('<br><br><form class="form-inline" role="form"><div class="form-group"> <label>Course Name:</label><br><input class="form-control"></div><br><br><div class="form-group"><label>Start Date:</label><br><input class="form-control"></div><br><br><div class="form-group"><label>End Date:</label><br><input class="form-control"></div>');
     });
 
+    $("#add_monday_btn").click(function(e){
+      e.preventDefault();
+      appendToDay($("#monday"),countMonday);
+    });
 });
+
+function appendToDay(selector, counter){
+  console.log(counter);
+  counter++;
+  if (counter > 5) return;
+  selector.append('<div class="form-group"><label>Course name:</label><input class="form-control"></div><div class="form-group"><label>Time:</label><input class="form-control"></div><div class="form-group"><label>Location:</label><input class="form-control"></div>');
+}
