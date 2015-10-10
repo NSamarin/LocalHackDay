@@ -53,6 +53,12 @@ $(document).ready( function() {
 
 
     function dateTimeForm(name) {
-        return " <div class='form-group' id='dateTimeForm-" + name +"'> <label for='TODO'>"+name+"</label> <input type='datetime' class='form-control'> </div> ";
+        return "<div class='form-group row' id='dateTimeForm-" + name +
+            "'> " +
+            "</label>" +
+            "<div class='col-md-4'><input type='datetime' class='form-control' placeholder='Start Time'></div>" +
+            "<div class='col-md-4'><input type='datetime' class='form-control' placeholder='End Time'></div>" +
+            "<div class='col-md-4'><input type='text' class='form-control' placeholder='Location'></div>" +
+            "</div>";
     }
 });
