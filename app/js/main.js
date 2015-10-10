@@ -1,4 +1,5 @@
 //TODO: remove after API is done
+var countCourses = 0;
 var sample = {
 "name": "Java Programming",
 "semester": 1,
@@ -65,5 +66,11 @@ $(document).ready(function() {
     displayCourseInfo(sample, pageElement);
     displayCourseInfo(sample, pageElement);
     displayCourseInfo(sample, pageElement);
+
+    $( "#add_course_btn" ).click(function(e) {
+      countCourses++;
+      if (countCourses > 5) return;
+      $("#course_info").append('<br><br><form class="form-inline" role="form"><div class="form-group"> <label>Course Name:</label><br><input class="form-control" id="email"></div><br><br><div class="form-group"><label>Start Date:</label><br><input class="form-control" id="pwd"></div><br><br><div class="form-group"><label>End Date:</label><br><input class="form-control" id="email"></div>');
+    });
 
 });
