@@ -124,10 +124,11 @@ $(document).ready( function() {
             "thursday": parseDay("Thursday", "Friday"),
             "friday": parseFriday()
           }
+          console.log(JSON.stringify(event));
 
-          $.post("/",JSON.stringify(event), function(data) {
-            console.log(data);
-          });
+           $.post("/",JSON.stringify(event), function(data) {
+             console.log(data);
+           });
     });
 
 
