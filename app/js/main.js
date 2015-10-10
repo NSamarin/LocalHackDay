@@ -1,3 +1,4 @@
+//TODO: remove after API is done
 var sample = {
 "name": "Java Programming",
 "semester": 1,
@@ -46,7 +47,6 @@ $(document).ready(function() {
 
 
     function displayCourseInfo(courseData, table) {
-      console.log(courseData.content.length);
       for (var i = 0; i < courseData.content.length; i++){
         table.append(makeRow(courseData.name, courseData.content[i]));
       }
@@ -60,7 +60,7 @@ $(document).ready(function() {
 
 
     var pageElement = $("#tablebody");
-    var courseData = {'name': 'name test', 'type': 'lecture', 'time': 12345};
+    //var courseData = {'name': 'name test', 'type': 'lecture', 'time': 12345};
 
     displayCourseInfo(sample, pageElement);
     displayCourseInfo(sample, pageElement);
