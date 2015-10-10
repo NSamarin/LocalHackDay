@@ -52,13 +52,11 @@ $(document).ready(function() {
 
     function displayCourseInfo(courseData, table) {
       for (var i = 0; i < courseData.content.length; i++){
-        console.log(makeRow(courseData.name, courseData.content[i]));
         table.append(makeRow(courseData.name, courseData.content[i]));
       }
-      table.children().each(function(){ // For each element
-          console.log(1);
+      table.children().each(function(){
           if( $(this).text().trim() === '' ) {
-              $(this).remove(); // if it is empty, it removes it
+              $(this).remove();
           }
       });
     }
@@ -87,12 +85,9 @@ $(document).ready(function() {
     var tableBody = $("#tablebody");
     displayCourseInfo(sample, tableBody);
     rowElements = $('.tablerow');
-
-    // for (var i=0; i<rowElements.length; i++) {
-        rowElements.on("click", function(ev) {
-            displayMoreInfo($(this).index(), tableBody);
-        });
-    // }
+    rowElements.on("click", function(ev) {
+        displayMoreInfo($(this).index(), tableBody);
+    });
 
 
 });
