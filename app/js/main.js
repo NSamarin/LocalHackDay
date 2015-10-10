@@ -1,8 +1,4 @@
-
-
-
-
-
+var rowElements;
 
 
 $(document).ready(function() {
@@ -18,18 +14,24 @@ $(document).ready(function() {
         return rowString + "<tr>";
     }
 
+    function displayMoreInfo(rowIndex, tableBody) {
+        var detailInfoElement = $("#detailinfo");
+        detailInfoElement.html("");
+        detailInfoElement.append("adsf" + rowIndex);
+    }
+
     var tableBody = $("#tablebody");
     var courseData = {'name': 'name test', 'type': 'lecture', 'time': 12345};
 
     displayCourseInfo(courseData, tableBody);
     displayCourseInfo(courseData, tableBody);
     displayCourseInfo(courseData, tableBody);
-    var rowElements = $('.tablerow');
+    rowElements = $('.tablerow');
 
 
     for (var i=0; i<rowElements.length; i++) {
-        rowElements.on("click", function() {
-            alert(i);
+        rowElements.on("click", function(ev) {
+            displayMoreInfo($(this).index(), tableBody);
         });
     }
 
