@@ -14,16 +14,36 @@ $(document).ready( function() {
         }
     });
     $('#tuesday-id').on('click', function() {
-        console.log('bla');
+        if(!hasTue) {
+            $(this).parent().append(dateTimeForm);
+            hasTue = true;
+        } else {
+            // remove
+        }
     });
     $('#wednesday-id').on('click', function() {
-        console.log('bla');
+        if(!hasWed) {
+            $(this).parent().append(dateTimeForm);
+            hasWed = true;
+        } else {
+            // remove
+        }
     });
     $('#thursday-id').on('click', function() {
-        console.log('bla');
+        if(!hasThu) {
+            $(this).parent().append(dateTimeForm);
+            hasThu = true;
+        } else {
+            // remove
+        }
     });
     $('#friday-id').on('click', function() {
-        console.log('bla');
+        if(!hasFri) {
+            $(this).parent().append(dateTimeForm);
+            hasFri = true;
+        } else {
+            // remove
+        }
     });
 
 
