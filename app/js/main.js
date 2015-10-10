@@ -96,7 +96,7 @@ $(document).ready(function() {
 
 
     function getData() {
-        $.get("127.0.0.1/courses", function(data) {
+        $.get("127.0.0.1:5000/courses", function(data) {
             var tableBody = $("#tablebody");
             displayCourseInfo(data, tableBody);
             rowElements = $('.tablerow');
