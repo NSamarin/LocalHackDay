@@ -1,5 +1,5 @@
 function getAPI(){
-  $.get( "api/lectures", function(data) {
+  $.get( "api/events", function(data) {
 
   });
 }
