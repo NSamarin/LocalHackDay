@@ -52,8 +52,15 @@ $(document).ready(function() {
 
     function displayCourseInfo(courseData, table) {
       for (var i = 0; i < courseData.content.length; i++){
+        console.log(makeRow(courseData.name, courseData.content[i]));
         table.append(makeRow(courseData.name, courseData.content[i]));
       }
+      table.children().each(function(){ // For each element
+          console.log(1);
+          if( $(this).text().trim() === '' ) {
+              $(this).remove(); // if it is empty, it removes it
+          }
+      });
     }
 
     function makeRow(name, content) {
@@ -63,8 +70,6 @@ $(document).ready(function() {
     }
 
     function displayMoreInfo(rowIndex, tableBody) {
-        var detailInfoElement = $("#detailinfo");
-        detailInfoElement.html("");
         var date = sample.content[rowIndex].date;
         var startTime = sample.content[rowIndex].startTime;
         var endTime = sample.content[rowIndex].endTime;
