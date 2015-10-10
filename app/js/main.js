@@ -1,3 +1,5 @@
+var rowElements;
+
 //TODO: remove after API is done
 var countCourses = 0,
 countMonday = 0,
@@ -47,7 +49,9 @@ var sample = {
       "eventType":"exam"
     }
   ]
-}
+};
+
+
 
 
 $(document).ready(function() {
@@ -55,23 +59,48 @@ $(document).ready(function() {
 
     function displayCourseInfo(courseData, table) {
       for (var i = 0; i < courseData.content.length; i++){
+        console.log(makeRow(courseData.name, courseData.content[i]));
         table.append(makeRow(courseData.name, courseData.content[i]));
       }
+      table.children().each(function(){ // For each element
+          console.log(1);
+          if( $(this).text().trim() === '' ) {
+              $(this).remove(); // if it is empty, it removes it
+          }
+      });
     }
 
     function makeRow(name, content) {
-        var rowString = "<tr>";
+        var rowString = "<tr class='tablerow'>";
         rowString += "<td>" + name + "</td><td>" + content.eventType + "</td><td>" + content.date + "</td>";
         return rowString + "<tr>";
     }
 
+    function displayMoreInfo(rowIndex, tableBody) {
+        var date = sample.content[rowIndex].date;
+        var startTime = sample.content[rowIndex].startTime;
+        var endTime = sample.content[rowIndex].endTime;
+        var eventType = sample.content[rowIndex].eventType;
 
-    var pageElement = $("#tablebody");
-    //var courseData = {'name': 'name test', 'type': 'lecture', 'time': 12345};
+        var modalDisplay = $('#detail-info-modal');
+        $('.modal-title').html(sample.name);
+        $('.modal-body').html('<b>Date:</b> ' + date);
+        $('.modal-body').append('<br><b>Start:</b> ' + startTime);
+        $('.modal-body').append('<br><b>End:</b> ' + endTime);
+        $('.modal-body').append('<br><b>Type:</b> ' + eventType);
+        modalDisplay.modal('show');
+    }
 
-    displayCourseInfo(sample, pageElement);
-    displayCourseInfo(sample, pageElement);
-    displayCourseInfo(sample, pageElement);
+    var tableBody = $("#tablebody");
+    displayCourseInfo(sample, tableBody);
+    rowElements = $('.tablerow');
+
+    // for (var i=0; i<rowElements.length; i++) {
+        rowElements.on("click", function(ev) {
+            displayMoreInfo($(this).index(), tableBody);
+        });
+    // }
+
 
     $( "#add_course_btn" ).click(function(e) {
       e.preventDefault();
