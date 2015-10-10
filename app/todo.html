@@ -12,6 +12,10 @@
   <link rel="stylesheet" href="css/main.css">
 
   <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/todo.js"></script>
 </head>
 
 <body>
@@ -20,7 +24,7 @@
 <br>
 <p>Select the type of event</p>
 <form>
-<select class="form-control" name="Event">
+<select id="event-type" class="form-control" name="Event">
     <option value="Private Event">private event</option>
     <option value="Public Event">public event</option>
     <option value="Lecture">lecture</option>
@@ -30,8 +34,8 @@
 
     <form>
     <br><p>Deadline:</p>
-    <div class="col-md-2"><input class="form-control" type="time" name="dtime"></div>
-    <div class="col-md-3"><select class="form-control" name="Day">
+    <div class="col-md-2"><input id="time" class="form-control" type="time" name="dtime"></div>
+    <div class="col-md-3"><select id="day" class="form-control" name="Day">
     <option value="1">1st</option>
     <option value="2">2nd </option>
     <option value="3">3rd</option>
@@ -64,7 +68,7 @@
     <option value="30">30th</option>
     <option value="31">31st</option>
   </select></div>
-<div class="col-md-3"><select class="form-control" name="Month">
+<div class="col-md-3"><select id="month" class="form-control" name="Month">
     <option value="1">January</option>
     <option value="2">February</option>
     <option value="3">March</option>
@@ -78,7 +82,7 @@
     <option value="11">November</option>
     <option value="12">December</option>
  </select></div>
-<div class="col-md-3"><select class="form-control" name="Year">
+<div class="col-md-3"><select id="year" class="form-control" name="Year">
     <option value="15">2015</option>
     <option value="16">2016</option>
     <option value="17">2017</option>
@@ -91,17 +95,17 @@
 
 <form action="action_page.php">
 <br><br><p>Event Name:</p>
-<input class="form-control" type="text" name="EventName">
+<input id="event-name" class="form-control" type="text" name="EventName">
 </input>
 </form>
 <br>
 <p>Event Details</p>
-<textarea name="Event Details" class="form-control" cols="50" rows="5"></textarea>
+<textarea id="details" name="Event Details" class="form-control" cols="50" rows="5"></textarea>
 <br>
 Add reminder?
 <input type="checkbox" name="dreminder">
 <br><br>
-<button class="btn btn-default" type="submit">Add to List</button>
+<button id="submit-todo-btn" class="btn btn-default" type="submit">Add to List</button>
 
 
 

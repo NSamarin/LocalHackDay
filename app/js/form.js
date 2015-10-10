@@ -113,7 +113,7 @@ $(document).ready( function() {
           }
         }
 
-          var result = {
+          var event = {
             "name": values[0],
             "semester": values[1],
             "start": values[2],
@@ -124,7 +124,9 @@ $(document).ready( function() {
             "thursday": parseDay("Thursday", "Friday"),
             "friday": parseFriday()
           }
-          console.log(JSON.stringify(result));
+
+          console.log(JSON.stringify(event));
+
 
     });
 
