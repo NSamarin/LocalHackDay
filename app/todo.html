@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+      body {
+          width: 90%;
+          padding-left: 100px;
+      }
+  </style>
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+
+<h1>Super Cool To-Do List</h1>
+<br>
+<p>Select the type of event</p>
+<form>
+<select class="form-control" name="Event">
+    <option value="Private Event">private event</option>
+    <option value="Public Event">public event</option>
+    <option value="Lecture">lecture</option>
+    <option value="Tutorial">tutorial</option>
+  </select>
+ </form>
+
+    <form>
+    <br><p>Deadline:</p>
+    <div class="col-md-2"><input class="form-control" type="time" name="dtime"></div>
+    <div class="col-md-3"><select class="form-control" name="Day">
+    <option value="1">1st</option>
+    <option value="2">2nd </option>
+    <option value="3">3rd</option>
+    <option value="4">4th</option>
+    <option value="5">5th</option>
+    <option value="6">6th</option>
+    <option value="7">7th</option>
+    <option value="8">8th</option>
+    <option value="9">9th</option>
+    <option value="10">10th</option>
+    <option value="11">11th</option>
+    <option value="12">12th</option>
+    <option value="13">13th</option>
+    <option value="14">14th</option>
+    <option value="15">15th</option>
+    <option value="16">16th</option>
+    <option value="17">17th</option>
+    <option value="18">18th</option>
+    <option value="19">19th</option>
+    <option value="20">20th</option>
+    <option value="21">21st</option>
+    <option value="22">22nd </option>
+    <option value="23">23rd</option>
+    <option value="24">24th</option>
+    <option value="25">25th</option>
+    <option value="26">26th</option>
+    <option value="27">27th</option>
+    <option value="28">28th</option>
+    <option value="29">29th</option>
+    <option value="30">30th</option>
+    <option value="31">31st</option>
+  </select></div>
+<div class="col-md-3"><select class="form-control" name="Month">
+    <option value="1">January</option>
+    <option value="2">February</option>
+    <option value="3">March</option>
+    <option value="4">April</option>
+    <option value="5">May</option>
+    <option value="6">June</option>
+    <option value="7">July</option>
+    <option value="8">August</option>
+    <option value="9">September </option>
+    <option value="10">October</option>
+    <option value="11">November</option>
+    <option value="12">December</option>
+ </select></div>
+<div class="col-md-3"><select class="form-control" name="Year">
+    <option value="15">2015</option>
+    <option value="16">2016</option>
+    <option value="17">2017</option>
+    <option value="18">2018</option>
+ </select></div>
+    </form>
+
+<br>
+
+
+<form action="action_page.php">
+<br><br><p>Event Name:</p>
+<input class="form-control" type="text" name="EventName">
+</input>
+</form>
+<br>
+<p>Event Details</p>
+<textarea name="Event Details" class="form-control" cols="50" rows="5"></textarea>
+<br>
+Add reminder?
+<input type="checkbox" name="dreminder">
+<br><br>
+<button class="btn btn-default" type="submit">Add to List</button>
+
+
+
+
+
+</body>
+</html>
