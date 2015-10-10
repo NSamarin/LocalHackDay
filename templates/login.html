@@ -1,0 +1,18 @@
+@app.route('/')
+def show_entries():
+    cur = g.db.execute('select title, text from entries order by id desc')
+    courses = [dict(title=row[0], semester=row[1]) for row in cur.fetchall()]
+    return render_template('show_courses.html', courses=courses){% extends "layout.html" %}
+{% block body %}
+  <h2>Login</h2>
+  {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+  <form action="{{ url_for('login') }}" method=post>
+    <dl>
+      <dt>Username:
+      <dd><input type=text name=username>
+      <dt>Password:
+      <dd><input type=password name=password>
+      <dd><input type=submit value=Login>
+    </dl>
+  </form>
+{% endblock %}
