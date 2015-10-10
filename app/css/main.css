@@ -8,7 +8,10 @@
 
 
 
-
+.table tbody tr:hover td
+{
+    background-color: #E8E8E8;
+}
 
 
 
