@@ -125,9 +125,9 @@ $(document).ready( function() {
             "friday": parseFriday()
           }
 
-          console.log(JSON.stringify(event));
-
-
+          $.post("/",JSON.stringify(event), function(data) {
+            console.log(data);
+          });
     });
 
 
