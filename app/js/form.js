@@ -7,46 +7,52 @@ var hasFri = false;
 $(document).ready( function() {
     $('#monday-id').on('click', function() {
         if(!hasMon) {
-            $(this).parent().append(dateTimeForm);
+            $(this).parent().append(dateTimeForm('mon'));
             hasMon = true;
         } else {
-            // remove
+            $('#dateTimeForm-mon').remove();
+            hasMon = false;
         }
     });
     $('#tuesday-id').on('click', function() {
         if(!hasTue) {
-            $(this).parent().append(dateTimeForm);
+            $(this).parent().append(dateTimeForm('tue'));
             hasTue = true;
         } else {
-            // remove
+            $('#dateTimeForm-tue').remove();
+            hasTue = false;
         }
     });
     $('#wednesday-id').on('click', function() {
         if(!hasWed) {
-            $(this).parent().append(dateTimeForm);
+            $(this).parent().append(dateTimeForm('wed'));
             hasWed = true;
         } else {
-            // remove
+            $('#dateTimeForm-wed').remove();
+            hasWed = false;
         }
     });
     $('#thursday-id').on('click', function() {
         if(!hasThu) {
-            $(this).parent().append(dateTimeForm);
+            $(this).parent().append(dateTimeForm('thu'));
             hasThu = true;
         } else {
-            // remove
+            $('#dateTimeForm-thu').remove();
+            hasThu = false;
         }
     });
     $('#friday-id').on('click', function() {
         if(!hasFri) {
-            $(this).parent().append(dateTimeForm);
+            $(this).parent().append(dateTimeForm('fri'));
             hasFri = true;
         } else {
-            // remove
+            $('#dateTimeForm-fri').remove();
+            hasFri = false;
         }
     });
 
 
-    var dateTimeForm = " <div class='form-group'> <label for='exampleInputEmail1'>Name</label> <input type='datetime' class='form-control'> </div> ";
-
+    function dateTimeForm(name) {
+        return " <div class='form-group' id='dateTimeForm-" + name +"'> <label for='TODO'>"+name+"</label> <input type='datetime' class='form-control'> </div> ";
+    }
 });
